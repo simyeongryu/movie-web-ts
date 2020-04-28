@@ -7,3 +7,5 @@ create-react-app
 react-router-dom
 
 styled-components
+
+styled-reset

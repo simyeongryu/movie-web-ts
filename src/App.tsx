@@ -5,10 +5,12 @@ import Search from "./Pages/Search";
 import TV from "./Pages/TV";
 import NotFoundPage from "./Pages/NotFoundPage";
 import Detail from "./Pages/Detail";
+import Header from "./Components/Header";
 
 const App = () => (
   <>
     <Router>
+      <Header />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/movie" component={Home} />
