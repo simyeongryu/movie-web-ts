@@ -36,11 +36,11 @@ const SLink = styled(Link)`
   justify-content: center;
 `;
 
-type HeaderProps = {
+interface HeaderProps {
   location: {
     pathname: string;
   };
-};
+}
 
 export default withRouter(({ location: { pathname } }: HeaderProps) => (
   <SHeader>
