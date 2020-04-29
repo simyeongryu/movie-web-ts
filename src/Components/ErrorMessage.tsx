@@ -7,18 +7,17 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-const Text = styled.span<{ color: string }>`
-  color: ${props => props.color};
+const Text = styled.span`
+  color: #e74c3c;
   font-size: 30px;
 `;
 
 interface ErrorMessageProps {
   text: string;
-  color: string;
 }
 
-export default ({ text, color }: ErrorMessageProps) => (
+export default ({ text }: ErrorMessageProps) => (
   <Container>
-    <Text color={color}>{text}</Text>
+    <Text>{text}</Text>
   </Container>
 );

@@ -18,20 +18,19 @@ interface TVProps {
   loading: boolean;
 }
 
-export default ({
-  topRated,
-  popular,
-  airingToday,
-  error,
-  loading
-}: TVProps) => (
-  <>
-    <Helmet>
-      <title>TV Shows | Ryuflix</title>
-    </Helmet>
-    {loading ? (
+export default ({ topRated, popular, airingToday, error, loading }: TVProps) =>
+  loading ? (
+    <>
+      <Helmet>
+        <title>Loading | Ryuflix</title>
+      </Helmet>
       <Loader />
-    ) : (
+    </>
+  ) : (
+    <>
+      <Helmet>
+        <title>TV Shows | Ryuflix</title>
+      </Helmet>
       <Container>
         {topRated && topRated.length > 0 && (
           <Section title="Top Rated Shows">
@@ -54,8 +53,7 @@ export default ({
             ))}
           </Section>
         )}
-        {error && <ErrorMessage text={error} color="#EA2027" />}
+        {error && <ErrorMessage text={error} />}
       </Container>
-    )}
-  </>
-);
+    </>
+  );

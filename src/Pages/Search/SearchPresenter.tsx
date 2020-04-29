@@ -40,9 +40,6 @@ export default ({
   updateTerm
 }: SearchProps) => (
   <Container>
-    <Helmet>
-      <title>Search | Ryuflix</title>
-    </Helmet>
     <Form onSubmit={handleSubmit}>
       <Input
         placeholder="Search Movies of TV shows"
@@ -51,9 +48,17 @@ export default ({
       />
     </Form>
     {loading ? (
-      <Loader />
+      <>
+        <Helmet>
+          <title>Loading | Ryuflix</title>
+        </Helmet>
+        <Loader />
+      </>
     ) : (
       <>
+        <Helmet>
+          <title>Search | Ryuflix</title>
+        </Helmet>
         {movieResults && movieResults.length > 0 && (
           <Section title={"Movies Results"}>
             {movieResults.map(movie => (
@@ -68,13 +73,11 @@ export default ({
             ))}
           </Section>
         )}
-        {error && <ErrorMessage text={error} color="#e74c3c" />}
+        {error && <ErrorMessage text={error} />}
         {movieResults &&
           tvResults &&
           movieResults.length <= 0 &&
-          tvResults.length <= 0 && (
-            <ErrorMessage text="Nothing Found" color="#7f8c8d" />
-          )}
+          tvResults.length <= 0 && <ErrorMessage text="Nothing Found" />}
       </>
     )}
   </Container>

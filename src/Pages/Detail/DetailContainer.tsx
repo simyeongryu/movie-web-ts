@@ -3,7 +3,11 @@ import DetailPresenter from "./DetailPresenter";
 import { movieApi, tvApi } from "../../api";
 
 interface DetailState {
-  result: object | null;
+  result: {
+    original_title: string;
+    original_name: string;
+    backdrop_path: string;
+  } | null;
   error: string | null;
   loading: boolean;
   isMovie: boolean;

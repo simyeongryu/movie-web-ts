@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import Section from "../../Components/Section";
 import Loader from "../../Components/Loader";
 import ErrorMessage from "../../Components/ErrorMessage";
+import Poster from "../../Components/Poster";
 
 interface HomeProps {
   nowPlaying: any[] | null;
@@ -18,44 +19,66 @@ const Container = styled.div`
   padding: 20px;
 `;
 
-export default ({
-  nowPlaying,
-  upcoming,
-  popular,
-  error,
-  loading
-}: HomeProps) => (
-  <>
-    <Helmet>
-      <title>Movies | Ryuflix</title>
-    </Helmet>
-    {loading ? (
+export default ({ nowPlaying, upcoming, popular, error, loading }: HomeProps) =>
+  loading ? (
+    <>
+      <Helmet>
+        <title>Loading | Ryuflix</title>
+      </Helmet>
       <Loader />
-    ) : (
+    </>
+  ) : (
+    <>
+      <Helmet>
+        <title>Movies | Ryuflix</title>
+      </Helmet>
       <Container>
         {nowPlaying && nowPlaying.length > 0 && (
           <Section title="Now Playing Movies">
             {nowPlaying.map(movie => (
-              <span>{movie.title}</span>
+              <Poster
+                key={movie.id}
+                id={movie.id}
+                imageUrl={movie.poster_path}
+                title={movie.original_title}
+                rating={movie.vote_average}
+                year={movie.release_date && movie.release_date.slice(0, 4)}
+                isMovie={true}
+              />
             ))}
           </Section>
         )}
         {upcoming && upcoming.length > 0 && (
           <Section title="Upcoming Movies">
             {upcoming.map(movie => (
-              <span>{movie.title}</span>
+              <Poster
+                key={movie.id}
+                id={movie.id}
+                imageUrl={movie.poster_path}
+                title={movie.original_title}
+                rating={movie.vote_average}
+                year={movie.release_date && movie.release_date.slice(0, 4)}
+                isMovie={true}
+              />
             ))}
           </Section>
         )}
         {popular && popular.length > 0 && (
           <Section title="Popular Movies">
             {popular.map(movie => (
-              <span>{movie.title}</span>
+              <Poster
+                key={movie.id}
+                id={movie.id}
+                imageUrl={movie.poster_path}
+                title={movie.original_title}
+                rating={movie.vote_average}
+                year={movie.release_date && movie.release_date.slice(0, 4)}
+                isMovie={true}
+              />
             ))}
           </Section>
         )}
-        {error && <ErrorMessage text={error} color="#EA2027" />}
+        {error && <ErrorMessage text={error} />}
       </Container>
-    )}
-  </>
-);
+    </>
+  );
