@@ -19,7 +19,7 @@ interface DetailProps {
     };
   };
   history: {
-    push: Function;
+    push: (url: string) => void;
   };
 }
 export default class extends React.Component<DetailProps, DetailState> {
