@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import Loader from "../../Components/Loader";
 import Section from "../../Components/Section";
 import ErrorMessage from "../../Components/ErrorMessage";
+import Poster from "../../Components/Poster";
 
 const Container = styled.div`
   padding: 0 20px;
@@ -35,21 +36,45 @@ export default ({ topRated, popular, airingToday, error, loading }: TVProps) =>
         {topRated && topRated.length > 0 && (
           <Section title="Top Rated Shows">
             {topRated.map(show => (
-              <span>{show.name}</span>
+              <Poster
+                key={show.id}
+                id={show.id}
+                imageUrl={show.poster_path}
+                title={show.original_name}
+                rating={show.vote_average}
+                year={show.first_air_date && show.first_air_date.slice(0, 4)}
+                isMovie={false}
+              />
             ))}
           </Section>
         )}
         {popular && popular.length > 0 && (
           <Section title="Popular Shows">
             {popular.map(show => (
-              <span>{show.name}</span>
+              <Poster
+                key={show.id}
+                id={show.id}
+                imageUrl={show.poster_path}
+                title={show.original_name}
+                rating={show.vote_average}
+                year={show.first_air_date && show.first_air_date.slice(0, 4)}
+                isMovie={false}
+              />
             ))}
           </Section>
         )}
         {airingToday && airingToday.length > 0 && (
           <Section title="Airing Today Shows">
             {airingToday.map(show => (
-              <span>{show.name}</span>
+              <Poster
+                key={show.id}
+                id={show.id}
+                imageUrl={show.poster_path}
+                title={show.original_name}
+                rating={show.vote_average}
+                year={show.first_air_date && show.first_air_date.slice(0, 4)}
+                isMovie={false}
+              />
             ))}
           </Section>
         )}

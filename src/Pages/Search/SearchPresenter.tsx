@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import Loader from "../../Components/Loader";
 import Section from "../../Components/Section";
 import ErrorMessage from "../../Components/ErrorMessage";
+import Poster from "../../Components/Poster";
 
 const Container = styled.div`
   padding: 0 20px;
@@ -62,14 +63,30 @@ export default ({
         {movieResults && movieResults.length > 0 && (
           <Section title={"Movies Results"}>
             {movieResults.map(movie => (
-              <span>{movie.title}</span>
+              <Poster
+                key={movie.id}
+                id={movie.id}
+                imageUrl={movie.poster_path}
+                title={movie.original_title}
+                rating={movie.vote_average}
+                year={movie.release_date && movie.release_date.slice(0, 4)}
+                isMovie={true}
+              />
             ))}
           </Section>
         )}
         {tvResults && tvResults.length > 0 && (
           <Section title={"TV Shows Results"}>
             {tvResults.map(show => (
-              <span>{show.name}</span>
+              <Poster
+                key={show.id}
+                id={show.id}
+                imageUrl={show.poster_path}
+                title={show.original_name}
+                rating={show.vote_average}
+                year={show.first_air_date && show.first_air_date.slice(0, 4)}
+                isMovie={false}
+              />
             ))}
           </Section>
         )}

@@ -7,6 +7,13 @@ interface DetailState {
     original_title: string;
     original_name: string;
     backdrop_path: string;
+    poster_path: string;
+    release_date: string;
+    first_air_date: string;
+    runtime: string;
+    episode_run_time: string;
+    genres: any[];
+    overview: string;
   } | null;
   error: string | null;
   loading: boolean;
