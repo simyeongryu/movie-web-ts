@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/static/js/main.f2446390.chunk.js",
-    "main.js.map": "/static/js/main.f2446390.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.c2fd5213.js",
-    "runtime-main.js.map": "/static/js/runtime-main.c2fd5213.js.map",
-    "static/js/2.d05b6c03.chunk.js": "/static/js/2.d05b6c03.chunk.js",
-    "static/js/2.d05b6c03.chunk.js.map": "/static/js/2.d05b6c03.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.418baf5f8b30c17265c0601e55b890c2.js": "/precache-manifest.418baf5f8b30c17265c0601e55b890c2.js",
-    "service-worker.js": "/service-worker.js",
-    "static/js/2.d05b6c03.chunk.js.LICENSE.txt": "/static/js/2.d05b6c03.chunk.js.LICENSE.txt",
-    "static/media/no-image.jpg": "/static/media/no-image.a25c1474.jpg"
+    "main.js": "/simyeongryu.github.io/movie-web-ts/static/js/main.f2446390.chunk.js",
+    "main.js.map": "/simyeongryu.github.io/movie-web-ts/static/js/main.f2446390.chunk.js.map",
+    "runtime-main.js": "/simyeongryu.github.io/movie-web-ts/static/js/runtime-main.54952c5e.js",
+    "runtime-main.js.map": "/simyeongryu.github.io/movie-web-ts/static/js/runtime-main.54952c5e.js.map",
+    "static/js/2.e333c948.chunk.js": "/simyeongryu.github.io/movie-web-ts/static/js/2.e333c948.chunk.js",
+    "static/js/2.e333c948.chunk.js.map": "/simyeongryu.github.io/movie-web-ts/static/js/2.e333c948.chunk.js.map",
+    "index.html": "/simyeongryu.github.io/movie-web-ts/index.html",
+    "precache-manifest.15e81f5f7530afbea8118b7d17475ac5.js": "/simyeongryu.github.io/movie-web-ts/precache-manifest.15e81f5f7530afbea8118b7d17475ac5.js",
+    "service-worker.js": "/simyeongryu.github.io/movie-web-ts/service-worker.js",
+    "static/js/2.e333c948.chunk.js.LICENSE.txt": "/simyeongryu.github.io/movie-web-ts/static/js/2.e333c948.chunk.js.LICENSE.txt",
+    "static/media/no-image.jpg": "/simyeongryu.github.io/movie-web-ts/static/media/no-image.a25c1474.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.c2fd5213.js",
-    "static/js/2.d05b6c03.chunk.js",
+    "static/js/runtime-main.54952c5e.js",
+    "static/js/2.e333c948.chunk.js",
     "static/js/main.f2446390.chunk.js"
   ]
 }
