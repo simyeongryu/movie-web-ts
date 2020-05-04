@@ -1,4 +1,4 @@
-import axios, { AxiosPromise } from "axios";
+import axios from "axios";
 
 const api = axios.create({
   baseURL: "https://api.themoviedb.org/3/"

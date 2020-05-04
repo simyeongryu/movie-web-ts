@@ -1,7 +1,6 @@
 import React from "react";
 import SearchPresenter from "./SearchPresenter";
 import { movieApi, tvApi } from "../../api";
-import { stringify } from "querystring";
 
 interface SearchState {
   movieResults: any[] | null;

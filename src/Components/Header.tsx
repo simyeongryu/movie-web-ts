@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ObjectHTMLAttributes } from "react";
+import React, { useState } from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 
@@ -14,6 +14,7 @@ const SHeader = styled.header`
   padding: 0px 10px;
   background-color: rgba(20, 20, 20, 0.8);
   box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.8);
+  z-index: 1;
 `;
 
 const List = styled.ul`
@@ -42,18 +43,22 @@ interface HeaderProps {
   };
 }
 
-export default withRouter(({ location: { pathname } }: HeaderProps) => (
-  <SHeader>
-    <List>
-      <Item current={pathname === "/"}>
-        <SLink to="/">Movies</SLink>
-      </Item>
-      <Item current={pathname === "/tv"}>
-        <SLink to="/tv">TV</SLink>
-      </Item>
-      <Item current={pathname === "/search"}>
-        <SLink to="/search">Search</SLink>
-      </Item>
-    </List>
-  </SHeader>
-));
+const Header = ({ location: { pathname } }: HeaderProps) => {
+  return (
+    <SHeader>
+      <List>
+        <Item current={pathname === "/"}>
+          <SLink to="/">Movies</SLink>
+        </Item>
+        <Item current={pathname === "/tv"}>
+          <SLink to="/tv">TV</SLink>
+        </Item>
+        <Item current={pathname === "/search"}>
+          <SLink to="/search">Search</SLink>
+        </Item>
+      </List>
+    </SHeader>
+  );
+};
+
+export default withRouter(Header);
